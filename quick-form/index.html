@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Évaluation du Profil d'Apprentissage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="text-center my-5">
+            <h1>Évaluation du Profil d'Apprentissage</h1>
+            <p class="lead">Ce questionnaire vous aidera à identifier votre style d'apprentissage préféré</p>
+        </header>
+
+        <div class="progress mb-4">
+            <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+        </div>
+
+        <form id="learning-profile-form">
+            <div class="sections-container">
+                <!-- Section 1: Traitement de l'Information -->
+                <section class="question-section" id="section-1">
+                    <h2 class="mb-4">Partie 1 : Traitement de l'Information</h2>
+                    
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">1. Quand tu essaies de comprendre un nouveau concept scientifique en physique, tu préfères :</h5>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q1" id="q1a" value="a" required>
+                                <label class="form-check-label" for="q1a">Voir des diagrammes ou des visualisations du concept</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q1" id="q1b" value="b">
+                                <label class="form-check-label" for="q1b">Écouter une explication claire de son fonctionnement</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q1" id="q1c" value="c">
+                                <label class="form-check-label" for="q1c">Expérimenter avec des matériaux pour démontrer le concept</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q1" id="q1d" value="d">
+                                <label class="form-check-label" for="q1d">Discuter du concept avec d'autres pour comprendre différentes perspectives</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">2. Lorsque tu prépares un test de mathématiques, quelle approche fonctionne le mieux pour toi ?</h5>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q2" id="q2a" value="a" required>
+                                <label class="form-check-label" for="q2a">Résoudre des problèmes pratiques sur papier</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q2" id="q2b" value="b">
+                                <label class="form-check-label" for="q2b">T'expliquer les formules à voix haute</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q2" id="q2c" value="c">
+                                <label class="form-check-label" for="q2c">Utiliser des objets physiques pour représenter le problème</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q2" id="q2d" value="d">
+                                <label class="form-check-label" for="q2d">Étudier en sessions courtes et concentrées avec des pauses régulières</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">3. Comment mémorises-tu le mieux les formules en chimie ?</h5>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q3" id="q3a" value="a" required>
+                                <label class="form-check-label" for="q3a">En créant des notes codées par couleur avec des modèles visuels</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q3" id="q3b" value="b">
+                                <label class="form-check-label" for="q3b">En les répétant à voix haute plusieurs fois</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q3" id="q3c" value="c">
+                                <label class="form-check-label" for="q3c">En les écrivant plusieurs fois jusqu'à ce qu'elles restent</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q3" id="q3d" value="d">
+                                <label class="form-check-label" for="q3d">En les reliant à des applications ou des exemples concrets</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-end">
+                        <button type="button" class="btn btn-primary next-btn">Suivant</button>
+                    </div>
+                </section>
+
+                <!-- Section 2: Préférences Environnementales -->
+                <section class="question-section" id="section-2" style="display: none;">
+                    <h2 class="mb-4">Partie 2 : Préférences Environnementales</h2>
+                    
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">4. Où étudies-tu le plus efficacement ?</h5>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q4" id="q4a" value="a" required>
+                                <label class="form-check-label" for="q4a">Dans un espace calme avec un bon éclairage et des distractions minimales</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q4" id="q4b" value="b">
+                                <label class="form-check-label" for="q4b">Dans un endroit avec un peu de bruit de fond ou de musique</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q4" id="q4c" value="c">
+                                <label class="form-check-label" for="q4c">Dans différents lieux, en changeant fréquemment pour rester engagé</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q4" id="q4d" value="d">
+                                <label class="form-check-label" for="q4d">Dans un environnement structuré avec des limites de temps claires</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">5. Quand te sens-tu le plus mentalement alerte pour étudier ?</h5>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q5" id="q5a" value="a" required>
+                                <label class="form-check-label" for="q5a">Tôt le matin</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q5" id="q5b" value="b">
+                                <label class="form-check-label" for="q5b">L'après-midi</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q5" id="q5c" value="c">
+                                <label class="form-check-label" for="q5c">Le soir</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q5" id="q5d" value="d">
+                                <label class="form-check-label" for="q5d">Tard dans la nuit</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">6. Après un entraînement intense d'athlétisme, tu :</h5>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q6" id="q6a" value="a" required>
+                                <label class="form-check-label" for="q6a">As besoin de calme complet et de repos avant d'étudier</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q6" id="q6b" value="b">
+                                <label class="form-check-label" for="q6b">Peux passer directement à l'étude avec une pause minimale</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q6" id="q6c" value="c">
+                                <label class="form-check-label" for="q6c">As besoin de mouvement physique avant de t'installer dans le travail académique</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q6" id="q6d" value="d">
+                                <label class="form-check-label" for="q6d">Préfères alterner entre de courtes périodes d'étude et d'activité physique</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+                        <button type="button" class="btn btn-secondary prev-btn">Précédent</button>
+                        <button type="button" class="btn btn-primary next-btn">Suivant</button>
+                    </div>
+                </section>
+
+                <!-- Section 3: Rétention d'Information -->
+                <section class="question-section" id="section-3" style="display: none;">
+                    <h2 class="mb-4">Partie 3 : Rétention d'Information</h2>
+                    
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">7. Tu apprends un concept complexe en biologie. Tu es plus susceptible de :</h5>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q7" id="q7a" value="a" required>
+                                <label class="form-check-label" for="q7a">Dessiner des diagrammes et utiliser un code couleur dans tes notes</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q7" id="q7b" value="b">
+                                <label class="form-check-label" for="q7b">T'enregistrer en expliquant le concept et réécouter</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q7" id="q7c" value="c">
+                                <label class="form-check-label" for="q7c">Créer des modèles ou utiliser des gestes pour représenter les processus</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q7" id="q7d" value="d">
+                                <label class="form-check-label" for="q7d">Enseigner le concept à quelqu'un d'autre</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">8. Quand tu as réussi à résoudre un problème difficile dans le passé, qu'est-ce qui t'a le plus aidé ?</h5>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q8" id="q8a" value="a" required>
+                                <label class="form-check-label" for="q8a">Le décomposer visuellement sur papier</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q8" id="q8b" value="b">
+                                <label class="form-check-label" for="q8b">Parler des étapes à voix haute</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q8" id="q8c" value="c">
+                                <label class="form-check-label" for="q8c">Utiliser des objets physiques ou des mouvements pour le résoudre</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q8" id="q8d" value="d">
+                                <label class="form-check-label" for="q8d">Prendre des pauses régulières pour réinitialiser ta réflexion</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">9. Dans une ville inconnue, comment te déplacerais-tu ?</h5>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q9" id="q9a" value="a" required>
+                                <label class="form-check-label" for="q9a">En utilisant une carte ou des indications visuelles</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q9" id="q9b" value="b">
+                                <label class="form-check-label" for="q9b">En demandant des directions verbales</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q9" id="q9c" value="c">
+                                <label class="form-check-label" for="q9c">En explorant et en apprenant par essais et erreurs</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q9" id="q9d" value="d">
+                                <label class="form-check-label" for="q9d">En créant un plan systématique avant de commencer</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+                        <button type="button" class="btn btn-secondary prev-btn">Précédent</button>
+                        <button type="button" class="btn btn-primary next-btn">Suivant</button>
+                    </div>
+                </section>
+
+                <!-- Section 4: Motivation et Engagement -->
+                <section class="question-section" id="section-4" style="display: none;">
+                    <h2 class="mb-4">Partie 4 : Motivation et Engagement</h2>
+                    
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">10. Tu deviens plus engagé dans l'apprentissage quand :</h5>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q10" id="q10a" value="a" required>
+                                <label class="form-check-label" for="q10a">L'information est présentée de manière visuellement attrayante</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q10" id="q10b" value="b">
+                                <label class="form-check-label" for="q10b">Tu as des opportunités de discussion et d'échange verbal</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q10" id="q10c" value="c">
+                                <label class="form-check-label" for="q10c">Tu peux interagir physiquement avec les matériaux ou les concepts</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q10" id="q10d" value="d">
+                                <label class="form-check-label" for="q10d">Tu comprends comment cela se connecte à tes objectifs personnels</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">11. Qu'est-ce qui te maintient motivé pendant de longues sessions d'étude ?</h5>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q11" id="q11a" value="a" required>
+                                <label class="form-check-label" for="q11a">Le suivi visuel des progrès (graphiques, listes barrées)</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q11" id="q11b" value="b">
+                                <label class="form-check-label" for="q11b">L'auto-encouragement verbal ou les groupes d'étude</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q11" id="q11c" value="c">
+                                <label class="form-check-label" for="q11c">Te déplacer ou changer fréquemment de position physique</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q11" id="q11d" value="d">
+                                <label class="form-check-label" for="q11d">Des délais clairs et des blocs de temps structurés</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">12. Quand tu apprends quelque chose pour l'athlétisme, tu préfères :</h5>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q12" id="q12a" value="a" required>
+                                <label class="form-check-label" for="q12a">Regarder des démonstrations ou des analyses vidéo</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q12" id="q12b" value="b">
+                                <label class="form-check-label" for="q12b">Recevoir un coaching et des retours verbaux</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q12" id="q12c" value="c">
+                                <label class="form-check-label" for="q12c">Pratiquer les mouvements de façon répétée</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q12" id="q12d" value="d">
+                                <label class="form-check-label" for="q12d">Comprendre la stratégie et l'objectif derrière les techniques</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+                        <button type="button" class="btn btn-secondary prev-btn">Précédent</button>
+                        <button type="button" class="btn btn-primary next-btn">Suivant</button>
+                    </div>
+                </section>
+
+                <!-- Section 5: Connexion avec l'Expérience Athlétique -->
+                <section class="question-section" id="section-5" style="display: none;">
+                    <h2 class="mb-4">Partie 5 : Connexion avec l'Expérience Athlétique</h2>
+                    
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">13. Comment ton entraînement athlétique influence-t-il ton apprentissage académique ?</h5>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q13" id="q13a" value="a" required>
+                                <label class="form-check-label" for="q13a">Les techniques d'imagerie visuelle se transfèrent bien à la mémorisation</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q13" id="q13b" value="b">
+                                <label class="form-check-label" for="q13b">Les indices verbaux et l'auto-dialogue aident dans les deux contextes</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q13" id="q13c" value="c">
+                                <label class="form-check-label" for="q13c">La discipline physique se répercute sur la discipline d'étude</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q13" id="q13d" value="d">
+                                <label class="form-check-label" for="q13d">Les approches de définition d'objectifs fonctionnent de manière similaire dans les deux domaines</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">14. Face à un défi dans le travail scolaire, tu fais généralement :</h5>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q14" id="q14a" value="a" required>
+                                <label class="form-check-label" for="q14a">Visualiser le succès comme dans la performance athlétique</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q14" id="q14b" value="b">
+                                <label class="form-check-label" for="q14b">Utiliser un discours positif comme tu le ferais pendant une compétition</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q14" id="q14c" value="c">
+                                <label class="form-check-label" for="q14c">Prendre des actions physiques pour changer ton état (respiration profonde, étirements)</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q14" id="q14d" value="d">
+                                <label class="form-check-label" for="q14d">Appliquer l'approche d'amélioration systématique du sport</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">15. La connexion entre tes rêves olympiques et ton travail académique est :</h5>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q15" id="q15a" value="a" required>
+                                <label class="form-check-label" for="q15a">Visuelle - tu peux te voir réussir dans les deux domaines</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q15" id="q15b" value="b">
+                                <label class="form-check-label" for="q15b">Verbale - tu parles des deux objectifs comme faisant partie de ton identité</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q15" id="q15c" value="c">
+                                <label class="form-check-label" for="q15c">Physique - ton dévouement à l'excellence physique s'étend au travail académique</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="q15" id="q15d" value="d">
+                                <label class="form-check-label" for="q15d">Stratégique - tu abordes les deux avec des méthodes de planification similaires</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group mb-4">
+                        <label for="email" class="form-label">Adresse email pour les résultats :</label>
+                        <input type="email" class="form-control" id="email" name="email" value="coach@dianatape.com" readonly style="background-color: #e9ecef;">
+                        <div class="form-text">Les résultats seront envoyés à cette adresse pour analyse par notre coach.</div>
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+                        <button type="button" class="btn btn-secondary prev-btn">Précédent</button>
+                        <button type="submit" class="btn btn-success">Soumettre</button>
+                    </div>
+                </section>
+            </div>
+        </form>
+
+        <!-- Results Section (initially hidden) -->
+        <section id="results-section" style="display: none;">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title text-center mb-4">Votre Profil d'Apprentissage</h2>
+                    
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">Scores par Style d'Apprentissage</h5>
+                                    <div class="progress mb-3">
+                                        <div class="progress-bar bg-primary" id="visual-score" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">Visuel: 0%</div>
+                                    </div>
+                                    <div class="progress mb-3">
+                                        <div class="progress-bar bg-success" id="auditory-score" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">Auditif: 0%</div>
+                                    </div>
+                                    <div class="progress mb-3">
+                                        <div class="progress-bar bg-warning" id="kinesthetic-score" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">Kinesthésique: 0%</div>
+                                    </div>
+                                    <div class="progress mb-3">
+                                        <div class="progress-bar bg-info" id="logical-score" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">Logique: 0%</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">Votre Style d'Apprentissage Principal</h5>
+                                    <div id="primary-style" class="text-center">
+                                        <h3 id="primary-style-name">-</h3>
+                                        <p id="primary-style-description">-</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <p>Vos résultats ont été envoyés à notre coach pour analyse.</p>
+                        <button id="restart-btn" class="btn btn-primary">Recommencer le questionnaire</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init({
+                publicKey: "bkjKzsvjyVwDOKiIG",
+            });
+        })();
+    </script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
