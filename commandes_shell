@@ -1,0 +1,13 @@
+mkdir -p backend/app/api/routes
+mkdir -p backend/app/core
+mkdir -p backend/app/models
+mkdir -p backend/app/schemas
+mkdir -p backend/app/utils
+touch backend/requirements.txt
+touch backend/app/main.py
+touch backend/.env
+touch backend/.gitignore 
+cd backend
+pip install alembic
+alembic init alembic 
+alembic revision --autogenerate -m "Initial migration" 
