@@ -120,6 +120,15 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function validateForm() {
+        // Vérifier si les informations personnelles sont remplies
+        const firstName = document.getElementById('firstName').value;
+        const lastName = document.getElementById('lastName').value;
+        const birthDate = document.getElementById('birthDate').value;
+        
+        if (!firstName || !lastName || !birthDate) {
+            return false;
+        }
+        
         // Vérifier si toutes les questions ont été répondues
         let allAnswered = true;
         
@@ -153,12 +162,6 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!allAnswered) {
                 break;
             }
-        }
-        
-        // Vérifier l'email
-        const emailInput = document.getElementById('email');
-        if (emailInput && !emailInput.value) {
-            allAnswered = false;
         }
         
         return allAnswered;
@@ -313,11 +316,29 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function sendResultsByEmail(scores) {
-        const email = document.getElementById('email').value;
+        // Récupérer les informations personnelles
+        const firstName = document.getElementById('firstName').value;
+        const lastName = document.getElementById('lastName').value;
+        const birthDate = document.getElementById('birthDate').value;
+        
+        // Calculer l'âge à partir de la date de naissance
+        const birthDateObj = new Date(birthDate);
+        const today = new Date();
+        let age = today.getFullYear() - birthDateObj.getFullYear();
+        const monthDiff = today.getMonth() - birthDateObj.getMonth();
+        if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDateObj.getDate())) {
+            age--;
+        }
         
         // Créer une analyse détaillée pour chaque style d'apprentissage
         const detailedAnalysis = `
 ANALYSE DÉTAILLÉE DU PROFIL D'APPRENTISSAGE
+
+INFORMATIONS PERSONNELLES :
+- Nom : ${lastName}
+- Prénom : ${firstName}
+- Date de naissance : ${birthDate}
+- Âge : ${age} ans
 
 Style principal : ${scores[scores.primaryStyle].name} (${Math.round(scores[scores.primaryStyle].percent)}%)
 
@@ -351,7 +372,7 @@ IMPLICATIONS POUR LE COACHING :
 
         console.log("Envoi d'email avec les données suivantes:", {
             to_email: "coach@dianatape.com",
-            user_email: email,
+            user_email: "coach@dianatape.com", // Email fixe
             visual_score: Math.round(scores.visual.percent),
             auditory_score: Math.round(scores.auditory.percent),
             kinesthetic_score: Math.round(scores.kinesthetic.percent),
@@ -364,7 +385,11 @@ IMPLICATIONS POUR LE COACHING :
             to_email: "coach@dianatape.com",
             from_name: "Évaluation du Profil d'Apprentissage",
             to_name: "Coach",
-            user_email: email,
+            user_email: "coach@dianatape.com", // Email fixe
+            first_name: firstName,
+            last_name: lastName,
+            birth_date: birthDate,
+            age: age,
             visual_score: Math.round(scores.visual.percent),
             auditory_score: Math.round(scores.auditory.percent),
             kinesthetic_score: Math.round(scores.kinesthetic.percent),
@@ -542,7 +567,9 @@ IMPLICATIONS POUR LE COACHING :
         currentSection = 0;
         
         // Mettre à jour la barre de progression
-        updateProgress();
+        progressBar.style.width = '0%';
+        progressBar.setAttribute('aria-valuenow', 0);
+        progressBar.textContent = '0%';
         
         // Masquer les résultats et afficher le formulaire
         resultsSection.style.display = 'none';
